@@ -1,6 +1,6 @@
 ## Quran application
 
-Live demo here: https://abdulrahmanfawzy.github.io/Quran-app/athan/index.html
+Live demo: https://abdulrahmanfawzy.github.io/Quran-app/athan/index.html
 
 Quran app is a website built using HTML, CSS, Javascript and bootstrap.
 This site has many features and let's break them down:
