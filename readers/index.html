@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quran App</title>
+    <link rel="shortcut icon" href="../logo-hed.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../main.css" />
+    <style>
+      div.surah_name {
+        word-spacing: 0 !important;
+      }
+      @media (max-width: 576px) {
+        .reader_item .right {
+          width: 100%;
+        }
+        .surah_name li {
+          font-size: 16px;
+        }
+        .rwaya {
+          font-size: 12px !important;
+        }
+        .search_div input {
+          font-size: 15px;
+        }
+        .search_div .search_icon {
+          font-size: 15px;
+          width: 43px;
+        }
+        .search_div {
+          height: 50px;
+          margin-top: 130px;
+        }
+
+        
+      }
+
+        
+    </style>
+  </head>
+  <body>
+    <div class="bodyImage"></div>
+    <header
+      id="headerId"
+      class="position-fixed mx-auto top-0 width: 90% z-3"
+    ></header>
+    <div class="container reader_top">
+      <div class="search_div">
+        <input type="text" id="search_div_inpt" placeholder="أبحث بإسم الشيخ" />
+        <div class="search_icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+
+      <div class="item_flex reader_item"></div>
+    </div>
+
+    <div id="audierId" class="audier">
+      <div class="audio">
+        <div class="channel_name">
+          <section>تلاوات مباركة</section>
+          <article id="txt"></article>
+        </div>
+        <div class="audio_icon">
+          <i id="audio_icon" class="fa-solid fa-play"></i>
+        </div>
+      </div>
+      <audio id="audioSound" src="" autoplay controls></audio>
+    </div>
+
+    <div class="spinner">
+        <div class="loader"></div>
+    </div>
+
+    <div class="footer_div">
+        <footer class="text-center text-lg-start" style="border-top: 1px solid #464b50">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: #1f2125e6; color: #FFF;">
+                نفع الله بنا وبكم امة محمد عليه أفضل الصلاة والسلام <span>&hearts;</span> 
+            </div>
+            <!-- Copyright -->
+        </footer>
+    </div>
+
+    <script type="module">
+      import header from "../header/header.js";
+      let headerId = document.getElementById("headerId");
+      headerId.innerHTML = header({
+        logo: "../imgs/logo.png",
+        home: "../index.html",
+        readers: "../readers/index.html",
+        hadith: "../hadith/index.html",
+        athan: "../athan/index.html",
+      });
+
+      window.onscroll = () => {
+        if (window.scrollY > 50) {
+          headerId.classList.add("activeClass");
+        } else {
+          headerId.classList.remove("activeClass");
+        }
+      };
+    </script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <script src="../radio.js"></script>
+  </body>
+</html>

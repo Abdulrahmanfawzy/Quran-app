@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran App</title>
+    <link rel="shortcut icon" href="../logo-hed.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        .item{
+            width: 100%;
+            padding: 25px 20px;
+            color: #FFF;
+            font-size: 18px;
+            width: 100%;
+            display: block;
+            cursor: inherit;
+        }
+        div.surah_name{
+            word-spacing: 7px;
+            font-size: 18px;
+        }
+        .hadiths{
+            font-size: 20px;
+            margin-bottom: 20px;
+            word-spacing: 5px;
+            text-align: right;
+        }
+
+        .hadith_name{
+            text-align: center;
+            font-size: 1.7rem;
+            color: #FFF;
+            word-spacing: 4px;
+        }
+        .item span{
+            color: #DDD;
+        }
+        .words{
+            margin-top: 30px;
+            margin-bottom: 15px!important;
+        }
+
+        .surah_name li{
+            margin-bottom: -20px!important;
+        }
+        .hints{
+            margin-top: 30px;
+        }
+        .surah_name i{
+            color: #2ca4ab;
+            vertical-align: middle;
+        }
+        .surah_name h4{
+            margin-bottom: 10px;
+        }
+        .hints h4{
+            margin-bottom: 23px;
+            margin-top: 50px;
+        }
+        .hints p{
+            margin-bottom: -20px;
+        }
+        .hints p:last-child{
+            margin-bottom: 15px;
+        }
+        .surah_name article li{
+            margin-bottom: 0px!important;
+        }
+        
+        @media(max-width: 576px){
+            .hadiths{
+                font-size: 15px;
+            }
+            .surah_name h4{
+                font-size: 18px!important;
+            }
+            .surah_name p {
+                font-size: 14px;
+                word-spacing: 2px;
+            }
+            .surah_name li{
+                font-size: 15px;
+            }
+            .surah_name h4 {
+                margin-bottom: 15px;
+            }
+            .item{
+                padding: 15px 11px;
+            }
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="bodyImage"></div>
+    <header
+    id="headerId"
+    class="position-fixed mx-auto top-0 width: 90% z-3"
+  ></header>
+
+    <div class="container mb-5 reader_top">
+        <!-- <h2 class="hadith_name"></h2> -->
+        <div class="item_flex">
+            
+        </div>
+        
+    </div>
+
+    <div id="audierId" class="audier">
+        <div class="audio">
+          <div class="channel_name">
+            <section>تلاوات مباركة</section>
+            <article id="txt"></article>
+          </div>
+          <div class="audio_icon">
+            <i id="audio_icon" class="fa-solid fa-play"></i>
+          </div>
+        </div>
+        <audio id="audioSound" src="" autoplay controls></audio>
+      </div>
+
+    <div class="spinner">
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+    
+    <div class="footer_div">
+        <footer class="text-center text-lg-start" style="border-top: 1px solid #464b50">
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: #1f2125e6; color: #FFF;">
+                نفع الله بنا وبكم امة محمد عليه أفضل الصلاة والسلام <span>&hearts;</span> 
+            </div>
+            <!-- Copyright -->
+        </footer>
+    </div>
+    
+    <script type="module">
+        import header from "../header/header.js";
+        let headerId = document.getElementById("headerId");
+        headerId.innerHTML = header({
+          logo: "../imgs/logo.png",
+          home: "../index.html",
+          readers: "../readers/index.html",
+          hadith: "../hadith/index.html",
+          athan: "../athan/index.html",
+        });
+  
+        window.onscroll = () => {
+          if (window.scrollY > 50) {
+            headerId.classList.add("activeClass");
+          } else {
+            headerId.classList.remove("activeClass");
+          }
+        };
+      </script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

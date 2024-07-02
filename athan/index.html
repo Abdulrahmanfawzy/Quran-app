@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran App</title>
+    <link rel="shortcut icon" href="../logo-hed.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        
+        .bodyImage::before{
+            height: 90%;
+        }
+        .awqat{
+            text-align: center;
+            color: #FFF;
+            font-size: 2rem;
+        }
+        .search_div{
+            margin-top: 30px;
+        }
+        #search_div_inpt{
+            border-color: #FFF;
+        }
+        #search_div_inpt::placeholder{
+            color: #FFF;
+        }
+
+        @media(max-width: 576px){
+            .awqat{
+                font-size: 1.2rem;
+                margin-top: 100px;
+            }
+            .day{
+                font-size: 16px;
+                margin-top: 10px;
+            }
+            .search_div {
+                margin-top: 20px;
+                height: 50px;
+            }   
+            .search_div input{
+                font-size: 1rem;
+            }
+            .search_div .search_icon{
+                width: 50px;
+            }
+            .tabler::-webkit-scrollbar {
+                width: 4px!important;
+            }
+            .table-bordered td, .table-bordered th{
+                font-size: 12px;
+            }
+            .table-bordered td:first-of-type{
+                font-size: 15px
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="bodyImage"></div>
+    
+    <header
+    id="headerId"
+    class="position-fixed mx-auto top-0 width: 90% z-3"
+  ></header>
+
+    <div class="container reader_top">
+        <h2 class="awqat">مواعيد الصلاة</h2>
+        <section class="day"></section>
+        <div class="search_div">
+            <input type="text" id="search_div_inpt" placeholder="أبحث عن مدينتك">
+            <div class="search_icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        
+        <div class="table-responsive tabler text-center">
+            <table class="table table-bordered table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">الدولة</th>
+                        <th scope="col">الفجر</th>
+                        <th scope="col">شروق الشمس</th>
+                        <th scope="col">الظُهر</th>
+                        <th scope="col">العصر</th>
+                        <th scope="col">المغرب</th>
+                        <th scope="col">غروب الشمس</th>
+                        <th scope="col">العِشاء</th>
+                        <th scope="col">منتصف الليل</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="audierId" class="audier">
+        <div class="audio">
+          <div class="channel_name">
+            <section>تلاوات مباركة</section>
+            <article id="txt"></article>
+          </div>
+          <div class="audio_icon">
+            <i id="audio_icon" class="fa-solid fa-play"></i>
+          </div>
+        </div>
+        <audio id="audioSound" src="" autoplay controls></audio>
+      </div>
+    
+    <div class="spinner">
+        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
+
+    <div class="footer_div">
+        <div class="footer_div">
+          <footer class="text-center text-lg-start" style="border-top: 1px solid #464b50">
+              <!-- Copyright -->
+              <div class="text-center p-3" style="background-color: #1f2125e6; color: #FFF;">
+                  نفع الله بنا وبكم امة محمد عليه أفضل الصلاة والسلام <span>&hearts;</span> 
+              </div>
+              <!-- Copyright -->
+          </footer>
+        </div>
+      </div>
+
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="module">
+        import header from "../header/header.js";
+        let headerId = document.getElementById("headerId");
+        headerId.innerHTML = header({
+          logo: "../imgs/logo.png",
+          home: "../index.html",
+          readers: "../readers/index.html",
+          hadith: "../hadith/index.html",
+          athan: "../athan/index.html",
+        });
+  
+        window.onscroll = () => {
+          if (window.scrollY > 50) {
+            headerId.classList.add("activeClass");
+          } else {
+            headerId.classList.remove("activeClass");
+          }
+        };
+      </script>
+
+    <script src="main.js"></script>
+    <script src="../radio.js"></script>
+</body>
+</html>
