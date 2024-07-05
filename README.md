@@ -2,7 +2,7 @@
 
 Live demo: https://abdulrahmanfawzy.github.io/Quran-app/
 
-Quran app is a website built using HTML, CSS, Javascript and bootstrap.
+Quran app is a website built using HTML, CSS, Javascript, bootstrap and Restful API.
 This site has many features and let's break them down:
 <li>The ability to find all the surahs of the Qur’an that you can read and listen to</li>
 <li>The Quran application allows you to know the interpretation of each surah and verse</li>
